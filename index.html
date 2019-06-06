@@ -151,6 +151,11 @@
 		<path data-duration="70" fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"></path>
 	</svg>
 </div>
+
+<div class="section circx hidden">
+	<object id="obj_svg" type="image/svg+xml" data="circle-regular.svg"></object>
+</div>
+
 <script>
 // var hi = new Vivus('hi-there', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false},
 // function () {
@@ -161,18 +166,20 @@
 // new Vivus('Layer_1', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 // new Vivus('Layer_2', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 70});
+var obj_svg = new Vivus('obj_svg', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 jQuery(document).ready(function(){
 	jQuery('.circ').hover(
 		function() {
-			console.log('asdfsadf');
 			jQuery('.cx').addClass('hidden');
-			test.reset().play();
 			jQuery('#Layer_2').removeClass('opacity');
+			test.reset().play();
+			window.setInterval(function() {
+				test.reset().play();
+			}, 5000);
 		}, function() {
-			console.log('123421');
 			jQuery('.cx').removeClass('hidden');
-			test.reset().play(-1);
 			jQuery('#Layer_2').addClass('opacity');
+			test.reset().play(-1);
 		}
 	);
 });
