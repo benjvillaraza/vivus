@@ -8,7 +8,6 @@
 	.bloc-head {
 	  color: #5aa8c5;
 	  padding: 30px;
-	  display: none;
 	}
 
 	#hi-there {
@@ -32,6 +31,10 @@
 		position: relative;
 	}
 
+	.hidden {
+		display: none;
+	}
+
 	.cx {
 		position: absolute;
 		top: 0;
@@ -41,7 +44,6 @@
 
 	.cx.hidden {
 		z-index: -1;
-		display: none;
 	}
 
 	#Layer_2.opacity {
@@ -50,7 +52,7 @@
 </style>
 <body>
 <script src="vivus.min.js"></script>
-<div class="bloc bloc-head">
+<div class="bloc bloc-head hidden">
 	<svg height="300" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 404.7 354" enable-background="new 0 0 404.7 354" id="hi-there" onclick="hi.reset().play();">
 
 		<!-- HI -->
@@ -80,7 +82,7 @@
 		<path stroke-linecap="round" stroke-linejoin="round" d="M157.3,300.8c3.8-2.3-29,0.8-35.6,3.2" style="stroke-dasharray: 37, 77; stroke-dashoffset: 0;"></path>
 	</svg>
 </div>
-<div class="section calc">
+<div class="section calc hidden">
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 viewBox="0 0 129.1 129.9" style="enable-background:new 0 0 129.1 129.9;" xml:space="preserve">
 	<g>
