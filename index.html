@@ -29,6 +29,14 @@
 	.section.circ {
 		background: #69b0ca;
 		cursor: pointer;
+		position: relative;
+	}
+
+	.cx {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
 	}
 </style>
 <body>
@@ -147,11 +155,11 @@ jQuery(document).ready(function(){
 		function() {
 			jQuery('.cx').class('hidden');
 			test.reset().play();
-			jQuery('#Layer_2').removeClass('hidden');
+			// jQuery('#Layer_2').removeClass('hidden');
 		}, function() {
 			jQuery('.cx').removeClass('hidden');
 			test.reset().play(-1);
-			jQuery('#Layer_2').class('hidden');
+			// jQuery('#Layer_2').class('hidden');
 		}
 	);
 });
