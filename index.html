@@ -153,10 +153,12 @@ var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 100});
 jQuery(document).ready(function(){
 	jQuery('.circ').hover(
 		function() {
+			console.log('asdfsadf');
 			jQuery('.cx').class('hidden');
 			test.reset().play();
 			// jQuery('#Layer_2').removeClass('hidden');
 		}, function() {
+			console.log('123421');
 			jQuery('.cx').removeClass('hidden');
 			test.reset().play(-1);
 			// jQuery('#Layer_2').class('hidden');
