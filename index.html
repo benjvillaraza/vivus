@@ -43,6 +43,10 @@
 		z-index: -1;
 		display: none;
 	}
+
+	#Layer_2.opacity {
+		opacity: 0;
+	}
 </style>
 <body>
 <script src="vivus.min.js"></script>
@@ -153,7 +157,7 @@ function () {
 	}
 });
 new Vivus('Layer_1', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
-// new Vivus('Layer_2', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
+new Vivus('Layer_2', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 100});
 jQuery(document).ready(function(){
 	jQuery('.circ').hover(
@@ -161,12 +165,12 @@ jQuery(document).ready(function(){
 			console.log('asdfsadf');
 			jQuery('.cx').addClass('hidden');
 			// test.reset().play();
-			// jQuery('#Layer_2').removeClass('hidden');
+			jQuery('#Layer_2').addClass('opacity');
 		}, function() {
 			console.log('123421');
 			jQuery('.cx').removeClass('hidden');
 			// test.reset().play(-1);
-			// jQuery('#Layer_2').class('hidden');
+			jQuery('#Layer_2').removeClass('opacity');
 		}
 	);
 });
