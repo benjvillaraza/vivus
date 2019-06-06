@@ -28,6 +28,7 @@
 
 	.section.circ {
 		background: #69b0ca;
+		cursor: pointer;
 	}
 </style>
 <body>
@@ -124,7 +125,7 @@
 	</svg>
 </div>
 <div class="section circ">
-	<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+	<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="circle" class="cx svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 		<path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200z"></path>
 	</svg>
 	<svg aria-hidden="true" id="Layer_2" focusable="false" data-prefix="far" data-icon="circle" class="svg-inline--fa fa-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -144,9 +145,13 @@ var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 100});
 jQuery(document).ready(function(){
 	jQuery('.circ').hover(
 		function() {
+			jQuery('.cx').class('hidden');
 			test.reset().play();
+			jQuery('#Layer_2').removeClass('hidden');
 		}, function() {
+			jQuery('.cx').removeClass('hidden');
 			test.reset().play(-1);
+			jQuery('#Layer_2').class('hidden');
 		}
 	);
 });
