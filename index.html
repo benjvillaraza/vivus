@@ -38,6 +38,10 @@
 		left: 0;
 		z-index: 1;
 	}
+
+	.cx.hidden {
+		z-index: -1;
+	}
 </style>
 <body>
 <script src="vivus.min.js"></script>
@@ -155,12 +159,12 @@ jQuery(document).ready(function(){
 		function() {
 			console.log('asdfsadf');
 			jQuery('.cx').addClass('hidden');
-			test.reset().play();
+			// test.reset().play();
 			// jQuery('#Layer_2').removeClass('hidden');
 		}, function() {
 			console.log('123421');
 			jQuery('.cx').removeClass('hidden');
-			test.reset().play(-1);
+			// test.reset().play(-1);
 			// jQuery('#Layer_2').class('hidden');
 		}
 	);
