@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Vivus</title>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 </head>
 <style>
 	.bloc-head {
@@ -57,7 +58,7 @@
 		<path stroke-linecap="round" stroke-linejoin="round" d="M157.3,300.8c3.8-2.3-29,0.8-35.6,3.2" style="stroke-dasharray: 37, 77; stroke-dashoffset: 0;"></path>
 	</svg>
 </div>
-<div class="section">
+<div class="section calc">
 	<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 		 viewBox="0 0 129.1 129.9" style="enable-background:new 0 0 129.1 129.9;" xml:space="preserve">
 	<g>
@@ -130,8 +131,18 @@ function () {
 		console.log('Animation finished. [log triggered from callback]');
 	}
 });
-var calc = new Vivus('Layer_1', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
-var calc = new Vivus('Layer_2', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
+// new Vivus('Layer_2', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
+var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 100});
+jQuery(document).ready(function(){
+	jQuery('.calc').hover(
+		function() {
+			test.reset().play();
+		}, function() {
+			test.reset().play(-1);
+		}
+	);
+});
+new Vivus('Layer_1', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 </script>
 </body>
 </html>
