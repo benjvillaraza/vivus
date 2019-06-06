@@ -165,7 +165,12 @@
 // });
 // new Vivus('Layer_1', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 // new Vivus('Layer_2', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
-var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 70});
+var test = new Vivus('Layer_2', {type: 'scenario-sync', duration: 70}, function() { 
+	window.setTimeout(function() {
+		test.reset().play();
+		console.log('loop');
+	}, 5000);
+});
 var obj_svg = new Vivus('obj_svg', {type: 'scenario-sync', duration: 20, start: 'autostart', dashGap: 20, forceRender: false});
 jQuery(document).ready(function(){
 	jQuery('.circ').hover(
